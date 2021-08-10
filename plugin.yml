@@ -1,0 +1,8 @@
+name: LavaRun
+version: 1.0
+author: McNext
+main: de.mcnext.lavarun.LavaRun
+api-version: 1.17
+commands:
+   lavarun:
+      aliases: [lr]

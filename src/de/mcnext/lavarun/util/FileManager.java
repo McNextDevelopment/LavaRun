@@ -38,7 +38,15 @@ public class FileManager {
 		saveConfig();
 	}
 	
-	public Object getValue(String path) {
-		return cfg.get(path);
+	public double getDouble(String path) {
+		return cfg.getDouble(path);
+	}
+	
+	public float getFloat(String path) {
+		return (float) cfg.getDouble(path);
+	}
+	
+	public String getString(String path) {
+		return cfg.getString(path);
 	}
 }

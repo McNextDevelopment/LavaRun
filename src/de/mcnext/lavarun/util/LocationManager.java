@@ -36,12 +36,12 @@ public class LocationManager {
 	
 	public Location getLocation(String name) {
 		try {
-			World world = Bukkit.getWorld((String) locationManager.getValue(name + ".World"));
-			double x = (double) locationManager.getValue(name + ".X");
-			double y = (double) locationManager.getValue(name + ".Y");
-			double z = (double) locationManager.getValue(name + ".Z");
-			float yaw = (float) locationManager.getValue(name + ".Yaw");
-			float pitch = (float) locationManager.getValue(name + ".Pitch");
+			World world = Bukkit.getWorld(locationManager.getString(name + ".World"));
+			double x = locationManager.getDouble(name + ".X");
+			double y = locationManager.getDouble(name + ".Y");
+			double z = locationManager.getDouble(name + ".Z");
+			float yaw = locationManager.getFloat(name + ".Yaw");
+			float pitch = locationManager.getFloat(name + ".Pitch");
 			
 			return new Location(world, x, y, z, yaw, pitch);
 		} catch (Exception e) {
@@ -72,15 +72,15 @@ public class LocationManager {
 	
 	public void loadArena() {
 		try {
-			World world1 = Bukkit.getWorld((String) regionManager.getValue("Pos1.World"));
-			double x1 = (double) regionManager.getValue("Pos1.X");
-			double y1 = (double) regionManager.getValue("Pos1.Y");
-			double z1 = (double) regionManager.getValue("Pos1.Z");
+			World world1 = Bukkit.getWorld(regionManager.getString("Pos1.World"));
+			double x1 = regionManager.getDouble("Pos1.X");
+			double y1 = regionManager.getDouble("Pos1.Y");
+			double z1 = regionManager.getDouble("Pos1.Z");
 			
-			World world2 = Bukkit.getWorld((String) regionManager.getValue("Pos2.World"));
-			double x2 = (double) regionManager.getValue("Pos2.X");
-			double y2 = (double) regionManager.getValue("Pos2.Y");
-			double z2 = (double) regionManager.getValue("Pos2.Z");
+			World world2 = Bukkit.getWorld(regionManager.getString("Pos2.World"));
+			double x2 = regionManager.getDouble("Pos2.X");
+			double y2 = regionManager.getDouble("Pos2.Y");
+			double z2 = regionManager.getDouble("Pos2.Z");
 			
 			Location loc1 = new Location(world1, x1, y1, z1),
 					 loc2 = new Location(world2, x2, y2, z2);
